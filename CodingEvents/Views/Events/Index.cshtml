@@ -30,20 +30,22 @@ else
             <th>Contact Email</th>
             <th>Event Location</th>
             <th>Number of Attendees</th>
+            <th>Event Type</th>
         </tr>
 
         @foreach (var evt in Model)
         {
-            <tr>
-                <td>@evt.Id</td>
-                <td>@evt.Name</td>
-                <td>@evt.Description</td>
-                <td>@evt.ContactEmail</td>
-                <td>@evt.Location</td>
-                <td>@evt.NumberOfAttendees</td>
-                <td><a asp-controller="Events" asp-action="Edit" asp-route-id="@evt.Id">Edit Event</a></td>
+    <tr>
+        <td>@evt.Id</td>
+        <td>@evt.Name</td>
+        <td>@evt.Description</td>
+        <td>@evt.ContactEmail</td>
+        <td>@evt.Location</td>
+        <td>@evt.NumberOfAttendees</td>
+        <td>@evt.Type</td>
+        <td><a asp-controller="Events" asp-action="Edit" asp-route-id="@evt.Id">Edit Event</a></td>
 
-            </tr>
+    </tr>
         }
     </table>
 }

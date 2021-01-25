@@ -39,7 +39,8 @@ namespace CodingEvents.Controllers
                     Description = addEventViewModel.Description,
                     ContactEmail = addEventViewModel.ContactEmail,
                     Location = addEventViewModel.Location,
-                    NumberOfAttendees = addEventViewModel.NumberOfAttendees
+                    NumberOfAttendees = addEventViewModel.NumberOfAttendees,
+                    Type = addEventViewModel.Type
                 };
 
                 EventData.Add(newEvent);
@@ -87,6 +88,8 @@ namespace CodingEvents.Controllers
 
             return Redirect("/Events");
         }
+
+        
 
     }
 }
