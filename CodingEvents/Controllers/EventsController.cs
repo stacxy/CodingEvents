@@ -40,7 +40,8 @@ namespace CodingEvents.Controllers
                     ContactEmail = addEventViewModel.ContactEmail,
                     Location = addEventViewModel.Location,
                     NumberOfAttendees = addEventViewModel.NumberOfAttendees,
-                    Type = addEventViewModel.Type
+                    Type = addEventViewModel.Type,
+                    Registration = addEventViewModel.Registration
                 };
 
                 EventData.Add(newEvent);

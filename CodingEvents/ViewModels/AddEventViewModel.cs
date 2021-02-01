@@ -31,6 +31,11 @@ namespace CodingEvents.ViewModels
 
         public EventType Type { get; set; }
 
+        public bool IsTrue { get { return true; } }
+
+        [Compare("IsTrue", ErrorMessage = "Attendee registration is required")]
+        public bool Registration { get; set; }
+
         public List<SelectListItem> EventTypes { get; set; } = new List<SelectListItem>
         {
             new SelectListItem(EventType.Conference.ToString(), ((int)EventType.Conference).ToString()),
