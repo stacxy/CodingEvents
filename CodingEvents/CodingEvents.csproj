@@ -1,7 +1,24 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>8b6d7d44-59d4-461b-9af7-c30ba747f448</UserSecretsId>
   </PropertyGroup>
+
+	<!--borrowed from github
+	 <ItemGroup>
+    <Folder Include="Views\Events\" />
+    <Folder Include="Data\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>-->
+		
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.11" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.4" />
+  </ItemGroup>
 
 </Project>
