@@ -34,7 +34,7 @@ namespace CodingEvents.Models
         {
         }
 
-        public Event(string name, string description) : this()
+        public Event(string name, string description) 
         {
             Name = name;
             Description = description;
