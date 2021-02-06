@@ -29,19 +29,36 @@ namespace CodingEvents.ViewModels
         [Range(0, 100000, ErrorMessage ="Invalid entry")]
         public int NumberOfAttendees { get; set; }
 
-        public EventType Type { get; set; }
 
         public bool IsTrue { get { return true; } }
 
         [Compare("IsTrue", ErrorMessage = "Attendee registration is required")]
         public bool Registration { get; set; }
 
-        public List<SelectListItem> EventTypes { get; set; } = new List<SelectListItem>
+
+
+        [Required(ErrorMessage = "Category is required")]
+        public int CategoryId { get; set; }
+
+        public List<SelectListItem> Categories { get; set; }
+
+
+        public AddEventViewModel(List<EventCategory> categories)
         {
-            new SelectListItem(EventType.Conference.ToString(), ((int)EventType.Conference).ToString()),
-            new SelectListItem(EventType.Meetup.ToString(), ((int)EventType.Meetup).ToString()),
-            new SelectListItem(EventType.Social.ToString(), ((int)EventType.Social).ToString()),
-            new SelectListItem(EventType.Workshop.ToString(), ((int)EventType.Workshop).ToString())
-        };
+            Categories = new List<SelectListItem>();
+
+            foreach (var category in categories)
+            {
+                Categories.Add(new SelectListItem
+                {
+                    Value = category.Id.ToString(),
+                    Text = category.Name
+                });
+            }
+        }
+
+        public AddEventViewModel()
+        {
+        }
     }
 }
